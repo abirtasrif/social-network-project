@@ -240,6 +240,10 @@ main .container .left .btn {
 }
 
 /* ================RIGHT=============== */
+.right {
+  position: sticky;
+  top: var(--sticky-top-right);
+}
 .container .right .message {
   background-color: var(--color-white);
   border-radius: var(--card-border-radius);
