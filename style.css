@@ -38,7 +38,6 @@ body {
   font-family: "Poppins", sans-serif;
   color: var(--color-dark);
   background-color: var(--color-light);
-  overflow: hidden;
 }
 
 /* -------------GENERAL STYLES---------- */
@@ -142,7 +141,6 @@ main .container {
 main .container .left {
   height: max-content;
   position: sticky;
-  top: 5.5rem;
   top: var(--sticky-top-left);
 }
 
@@ -153,6 +151,7 @@ main .container .left .profile {
   display: flex;
   align-items: center;
   gap: 1rem;
+  width: 100%;
 }
 
 main .container .left .sidebar {
@@ -241,6 +240,7 @@ main .container .left .btn {
 
 /* ================RIGHT=============== */
 .right {
+  height: max-content;
   position: sticky;
   top: var(--sticky-top-right);
 }
@@ -301,15 +301,18 @@ h5 {
   background-color: var(--color-white);
   padding: var(--card-padding);
   border-radius: var(--card-border-radius);
+  margin-bottom: 0.5rem;
 }
 
 .fr-requests .side-profile .profile-photo {
   margin-bottom: 1rem;
 }
-
+.side-buttons {
+  display: flex;
+}
 .fr-button {
   width: 8rem;
-  padding-left: 2.4rem;
+  padding-left: 2rem;
 }
 .fr-button:last-child {
   background-color: var(--color-gray);
@@ -373,4 +376,49 @@ h5 {
 
 .post p .more {
   color: var(--color-gray);
+}
+
+/* ===================MEDIA QUERY================== */
+@media screen and (max-width: 1300px) {
+  main .container {
+    grid-template-columns: 18vw auto 22vw;
+  }
+}
+
+@media screen and (max-width: 1240px) {
+  main .container {
+    grid-template-columns: 8vw auto 22vw;
+  }
+  .container {
+    width: 96%;
+  }
+
+  main .container .left .profile,
+  .sidebar h3,
+  .left .btn {
+    display: none;
+  }
+
+  main .container .left .profile {
+    margin-bottom: 0;
+  }
+}
+
+@media screen and (max-width: 1040px) {
+  nav .search-bar,
+  main .container .right {
+    display: none;
+  }
+
+  main .container .left {
+    grid-column: 3/4;
+    position: fixed;
+    top: 20rem;
+    right: 0;
+    width: 5rem;
+  }
+
+  main .container .middle {
+    grid-column: 1/3;
+  }
 }
