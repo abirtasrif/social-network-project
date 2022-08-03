@@ -418,7 +418,42 @@ h5 {
     width: 5rem;
   }
 
-  main .container .middle {
+  main .container .center {
     grid-column: 1/3;
+  }
+}
+
+@media screen and (max-width: 630px) {
+  main .container .left {
+    grid-template-columns: 1/4;
+    position: fixed;
+    top: 2.5rem;
+    right: 0;
+    width: 100vw;
+    z-index: 10;
+  }
+
+  main .container .center {
+    grid-column: 1/3;
+    margin-top: 3rem;
+    max-width: 100vw;
+  }
+  main .container {
+    grid-template-columns: 1vw;
+  }
+
+  main .container .left .sidebar {
+    height: 5rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 0;
+  }
+
+  .profile-photo {
+    scale: 0.85;
+  }
+  .story-image {
+    height: 7.5rem;
   }
 }
